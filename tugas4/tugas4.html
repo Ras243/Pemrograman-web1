@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas_4_WEB</title>
+
+    <!-- css dan javascript HTML drag/drog -->
+    <style>
+      #div1,
+      #div2 {
+        float: left;
+        width: 300px;
+        height: 300px;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid black;
+      }
+    </style>
+    <script>
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+
+      function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+      }
+
+      function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+      }
+    </script>
+
+    <!-- javascript HTML Web storage -->
+    <script>
+      function clickCounter() {
+        if (typeof Storage !== "undefined") {
+          if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount) + 1;
+          } else {
+            localStorage.clickcount = 1;
+          }
+          document.getElementById("result").innerHTML = "Kamu telah mengklik tombol " + localStorage.clickcount + " Kali.";
+        } else {
+          document.getElementById("result").innerHTML = "Maaf, browser Anda tidak mendukung Penyimpanan Web...";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- NO.1 HTML Graphic -->
+    <fieldset>
+      <legend><b>No.1 HTML Graphic</b></legend>
+      <center>
+        <table>
+          <tr>
+            <td>
+              <svg width="150" height="150">
+                <circle cx="80" cy="80" r="50" stroke="black" stroke-width="1" fill="green" />
+              </svg>
+            </td>
+            <td>
+              <svg width="100" height="100">
+                <rect width="100" height="100" stroke="black" style="fill: rgb(184, 10, 10)" />
+              </svg>
+            </td>
+            <td>
+              <svg height="110" width="300">
+                <path d="M130 0 L30 200 L225 200 Z" stroke="black" stroke-width="1" style="fill: rgb(23, 16, 242)" />
+              </svg>
+            </td>
+          </tr>
+        </table>
+      </center>
+    </fieldset>
+
+    <!-- NO.2 HTML Media -->
+    <fieldset>
+      <legend><b>NO.2 HTML Media</b></legend>
+      <table>
+        <!-- Video -->
+        <tr>
+          <td>
+            <video controls>
+              <source src="video1.mp4" />
+            </video>
+          </td>
+        </tr>
+        <!-- Musik -->
+        <tr>
+          <td>
+            <audio controls>
+              <source src="Feby_Putri-halu.mp3" />
+            </audio>
+          </td>
+        </tr>
+        <!-- Gambar -->
+        <tr>
+          <td>
+            <object width="80%" height="80%" data="ngoding.png" type=""></object>
+          </td>
+          <td>
+            <object width="100%" height="100%" data="../pertemuan2/tugas2.html" type=""></object>
+          </td>
+        </tr>
+        <!-- Youtube -->
+        <tr>
+          <td>
+            <iframe
+              width="600"
+              height="300"
+              src="https://www.youtube.com/embed/X7cAnm3TbZo"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture?controls=0"
+              allowfullscreen
+            ></iframe>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+
+    <!-- NO.3 HTML API -->
+    <fieldset>
+      <legend><b>NO.3 HTML API</b></legend>
+      <!-- HTML Geolocation -->
+      <p>Klik tombol untuk mendapatkan koordinat Anda.</p>
+
+      <button onclick="getLocation()">Klik disini</button>
+
+      <p id="demo"></p>
+      <script>
+        var x = document.getElementById("demo");
+
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+          } else {
+            x.innerHTML = "Geolokasi tidak didukung oleh browser ini.";
+          }
+        }
+
+        function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+        }
+
+        function showError(error) {
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              x.innerHTML = "Pengguna menolak permintaan Geolocation.";
+              break;
+            case error.POSITION_UNAVAILABLE:
+              x.innerHTML = "Informasi lokasi tidak tersedia.";
+              break;
+            case error.TIMEOUT:
+              x.innerHTML = "Waktu permintaan untuk mendapatkan lokasi pengguna telah habis.";
+              break;
+            case error.UNKNOWN_ERROR:
+              x.innerHTML = "Terjadi kesalahan yang tidak diketahui.";
+              break;
+          }
+        }
+      </script>
+      <br />
+
+      <!-- HTML Drag/Drop -->
+      <p>Seret gambar logo ke dalam kotak:</p>
+
+      <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <img id="drag1" src="ngoding.png" draggable="true" ondragstart="drag(event)" width="300" height="300" />
+
+      <!-- HTML Web storage -->
+      <p><button onclick="clickCounter()" type="button">Klik disini!</button></p>
+      <div id="result"></div>
+      <p>Klik tombol untuk melihat counter (penghitung) bertambah.</p>
+      <p>Tutup tab browser (atau jendela), dan coba lagi, dan penghitung akan direset.</p>
+
+      <!-- HTML Workers -->
+      <p>Count numbers: <output id="result"></output></p>
+      <button onclick="startWorker()">Start Worker</button>
+      <button onclick="stopWorker()">Stop Worker</button>
+
+      <p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support Web Workers.</p>
+
+      <script>
+        var w;
+
+        function startWorker() {
+          if (typeof Worker !== "undefined") {
+            if (typeof w == "undefined") {
+              w = new Worker("demo_workers.js");
+            }
+            w.onmessage = function (event) {
+              document.getElementById("result").innerHTML = event.data;
+            };
+          } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+          }
+        }
+
+        function stopWorker() {
+          w.terminate();
+          w = undefined;
+        }
+      </script>
+
+      <!-- HTML SSE -->
+      <h1>Getting server updates</h1>
+      <div id="result"></div>
+
+      <script>
+        if (typeof EventSource !== "undefined") {
+          var source = new EventSource("demo_sse.php");
+          source.onmessage = function (event) {
+            document.getElementById("result").innerHTML += event.data + "<br>";
+          };
+        } else {
+          document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
+        }
+      </script>
+    </fieldset>
+  </body>
+</html>

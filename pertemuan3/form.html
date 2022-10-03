@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form pada html</title>
+  </head>
+  <body>
+    <h2 align="center" style="color: red">Form Mahasiswa Teknik Informatika 2021</h2>
+    <form action="">
+      <table>
+        <h2 align="center" style="color: brown"><marquee behavior="" direction="right">Universitas Sulawesi Barat</marquee></h2>
+      </table>
+    </form>
+    <!-- MENGGUNAKAN TABEL -->
+    <!-- Membuat Tabel -->
+    <table align="center" border="1" cellspacing="0" cellpading="5">
+      <!-- bagian komponen tabel dari komponen Nilai -->
+      <tr>
+        <td align="right"><form action="">username :</form></td>
+        <td><input type="text" name="username" /></td>
+      </tr>
+
+      <tr>
+        <td align="right"><form action="">password :</form></td>
+        <td><input type="password" name="password" /></td>
+      </tr>
+      <tr align="center">
+        <td colspan="2">
+          <input type="radio" name="jenis kelamin" value="pria" /> Pria 
+          <input type="radio" name="jenis kelamin" value="wanita" /> Wanita 
+        </td>
+      </tr>
+      <tr align="center">
+        <td colspan="2">
+          <input type="checkbox" name="hobby" value="membaca" /> Membaca 
+          <input type="checkbox" name="hobby" value="nonton" /> Nonton 
+          <input type="checkbox" name="hobby" value="olahraga" /> Olahraga
+        </td>
+      </tr>
+      <tr>
+        <td align="right"><form action="">Komentar :</form></td>
+        <td><textarea name="message" id="" cols="35" rows="5"></textarea></td>
+      </tr>
+      <tr>
+        <td align="right"><form action="">Combo Box :</form></td>
+        <td>
+          <select name="hoby" id="hoby">
+            <option value="">Majene</option>
+            <option value="">Pasangkayu</option>
+            <option value="">Makassar</option>
+          </select>
+        </td>
+      </tr>
+      <tr align="center">
+        <td colspan="2">
+          <button type="submit">Kirim</button>
+        </td>
+      </tr>
+    </table>
+
+    <!-- TIDAK MENGGUNAKAN TABEL -->
+    <form align="center" action="">
+      <h2>Form tanpa tabel</h2>
+      username : <input type="text" name="username" />
+      <br />
+      password : <input type="password" name="password" />
+      <br />
+      <input type="radio" name="jenis kelamin" value="pria" /> Pria 
+      <input type="radio" name="jenis kelamin" value="wanita" /> Wanita
+      <br />
+      <input type="checkbox" name="hobby" value="membaca" /> Membaca <input type="checkbox" name="hobby" value="nonton" /> Nonton <input type="checkbox" name="hobby" value="olahraga" /> Olahraga
+      <br />
+      <select name="" id="">
+        <option value="">Majene</option>
+        <option value="">Pasangkayu</option>
+        <option value="">Makassar</option>
+      </select>
+      <br />
+      <textarea name="message" id="" cols="30" rows="10">Komentar</textarea>
+      <br />
+      <button type="submit">Kirim</button>
+    </form>
+  </body>
+</html>

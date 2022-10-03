@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form_html</title>
+</head>
+<body>
+    <h3>contoh bentuk elemen tag input berdasarkan dari jenis type-nya :</h3>
+    <form action="#" method="post">
+        <p>
+          <label>Input tanpa atribut : <input></label>
+        </p>
+        <p>
+          <label>Input type text : <input type="text"></label>
+        </p>    
+        <p>
+          <label>Input type password : <input type="password"></label>
+        </p>    
+        <p>
+          <label>Input type date : <input type="date"></label>
+        </p>    
+        <p>
+          <label>Input type color : <input type="color"></label>
+        </p>    
+        <p>
+          <label>Input type radio : <input type="radio" name="radio_" checked> <input type="radio" name="radio_"> <input type="radio" name="radio_"></label>
+        </p>
+        <p>
+          <label>Input type checkbox : <input type="checkbox" name="box_1" checked> <input type="checkbox" name="box_2"> <input type="checkbox" name="box_3"></label>
+        </p>
+        <p>
+          <input type="submit" value="Kirim">
+          <input type="reset" value="Reset">
+        </p>
+     </form>
+     <h1>Latihan Menggunakan HTML Element Tag INPUT</h1>
+<form action="proses.php" method="post">
+<fieldset>
+   <legend>Formulir Pendaftaran Mahasiswa</legend>
+   <p>
+     <label for="nama">Nama</label>
+     <input type="text" name="nama" id="nama" required autocomplete minlength="3">
+   </p>
+   <p>
+     <label for="email">Email</label>
+     <input type="email" name="email" id="email" required>
+   </p>
+   <p>
+     <label for="alamat">Alamat</label>
+     <input type="text" name="alamat" id="alamat" required>
+   </p>
+   <p>
+     <label for="no_telp">No Telp</label>
+     <input type="tel" name="no_telp" required>
+   </p>
+   <p>
+     <label for="gender">Jenis Kelamin</label>
+     <input type="radio" name="gender" value="laki-laki" checked> Laki-laki
+     <input type="radio" name="gender" value="perempuan"> Perempuan
+   </p>
+   <p>
+     <label for="hoby">Hoby</label>
+     <input type="checkbox" name="hoby_1" Value="membaca"> Membaca
+     <input type="checkbox" name="hoby_2" Value="olahraga"> Olahraga
+     <input type="checkbox" name="hoby_3" Value="melukis"> Melukis
+   </p>
+   <p>
+     <input type="submit" value="Kirim">
+     <input type="reset" value="Reset">
+   </p>
+</fieldset>
+</form>
+<h1>Latihan Menggunakan HTML Element Tag TEXTAREA</h1>
+<form action="#" method="post">
+   <fieldset>
+   <legend>Silahkan komentar di sini..</legend>
+   <p>
+     <label for="nama">Nama : </label>
+     <input type="text" name="nama" id="nama" required autocomplete maxlength="50">
+   </p>
+   <p>
+     <label for="email">Email : </label>
+     <input type="email" name="email" id="email" required>
+   </p>
+   <p>
+     <label for="komentar">Komentar</label><br>
+     <textarea cols="50" rows="10" id="komentar" required></textarea>
+   </p>
+   <p>
+     <input type="submit" value="Kirim">
+     <input type="reset" value="Reset">
+   </p>
+   </fieldset>
+</form>
+<h1>Latihan Menggunakan HTML Element Tag SELECT</h1>
+<form action="#" method="post">
+<p>
+   <label for="nama">Nama : </label>
+   <input type="text" name="nama" id="nama" required autocomplete maxlength="50">
+</p>
+<p>
+   <label for="kota">Kota : </label>
+   <select name="kota" id="kota" required>
+     <option value="">--pilih kota--</option>
+     <option value="batam">Batam</option>
+     <option value="jakarta">Jakarta</option>
+     <option value="palembang">Palembang</option>
+     <option value="surabaya">Surabaya</option>
+   </select>
+</p>
+<p>
+   <label for="usia">Usia : </label>
+   <select name="kota" id="usia" required>
+     <option value="">--pilih usia--</option>
+     <option value="17 tahun">17 Tahun</option>
+     <option value="18 tahun">18 Tahun</option>
+     <option value="19 tahun">19 Tahun</option>
+     <option value="20 tahun">20 Tahun</option>
+     <option value="21 tahun">21 Tahun</option>
+     <option value="22 tahun">22 Tahun</option>
+     <option value="23 tahun">23 Tahun</option>
+     <option value="24 tahun">24 Tahun</option>
+     <option value="25 tahun">25 Tahun</option>
+   </select>
+</p>
+<p>
+   <input type="submit" value="Kirim">
+   <input type="reset" value="Reset">
+</p>
+</form>
+<h1>Latihan Menggunakan HTML Element Tag OPTION</h1>
+<form action="#" method="post">
+<p>
+   <label for="minuman">Pilih Minuman Favoritmu : </label>
+   <select name="minuman" id="minuman" required>
+     <option value="black cofee" selected>Black Cofee</option>
+     <option value="es sirup">Es Sirup</option>
+     <option value="es dawet">Es Dawet</option>
+     <option value="es buah">Es Buah</option>
+     <option value="coca cola">Coca Cola</option>
+     <option value="fanta">Fanta</option>
+   </select>
+</p>
+<p>
+   <label for="tempat_wisata">Pilih Tempat Wisata Favoritmu :</label>
+   <select name="tempat_wisata" id="tempat_wisata" required>
+     <option value="pantai ancol jakarta" selected>Pantai Ancol Jakarta</option>
+     <option value="ciater lembang">Ciater Lembang</option>
+     <option value="coastarina beach batam">Coastarina Beach Batam</option>
+     <option value="pantai kuta bali">Pantai Kuta Bali</option>
+     <option value="raja ampat papua">Raja Ampat Papua</option>
+     <option value="danau toba sumut">Danau Toba Sumut</option>
+     <option value="borobudur magelang">Borobudur Magelang</option>
+   </select>
+</p>
+<p>
+   <input type="submit" value="Kirim">
+   <input type="reset" value="Reset">
+</p>
+</form>
+<h1>Latihan Menggunakan HTML Element Tag OPTGROUP</h1>
+<form action="#" method="post">
+<label for="propinsi">Pilih Propinsi :</label>
+<select name="propinsi" id="propinsi">
+   <optgroup label="Pulau Jawa">
+     <option value="banten">Banten</option>
+     <option value="dki jakarta">DKI Jakarta</option>
+     <option value="jawa barat">Jawa Barat</option>
+     <option value="jawa tengah">Jawa Tengah</option>
+     <option value="jawa timur">JawaTimur</option>
+     <option value="yogyakarta">Yogyakarta</option>
+   </optgroup>
+   <optgroup label="Pulau Sumatera">
+     <option value="lampung">Lampung</option>
+     <option value="sumatera utara">Sumatera Utara</option>
+     <option value="sumatera barat">Sumatera Barat</option>
+     <option value="jambi">Jambi</option>
+     <option value="riau">Riau</option>
+     <option value="aceh">Aceh</option>
+   </optgroup>
+</select>
+</form>
+<h1>Latihan Menggunakan HTML Element Tag BUTTON</h1>
+<p>
+    <button type="button" onclick="javascript:alert('Anda menekan tombol ini');"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSKEtIlA0h7x4XFfPkKjsz4VJqa90VTzHCaPjdmOb6ZA&s" alt="" width="5%" height="5%"> Tekan disini..</button>
+    <button type="button" onclick="javascript:alert('Anda menekan tombol keluar');"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS20xMfg5vlSPghoaAqSHHI80_eSGn6hIVkUlJuO4rNQ&s" width="5%" height="5%"> Keluar</button>
+    <button type="button" onclick="javascript:alert('Anda menekan tombol refresh');"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWJsKlwq6RVRpttSoynEdcfdQ9FKFXqQrGuhSWzCh_iQ&s" width="5%" height="5%"> Refresh</button>
+    <button type="button" onclick="javascript:alert('Anda menekan tombol download');"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUQ7cP6Jk0S6r468FZA7zrr8M6qg3bE4Gvl30pv3kpOg&s" width="5%" height="5%"> Download</button>
+ </p>
+ <h1>Latihan Menggunakan HTML Element Tag LABEL</h1>
+<form action="#" method="post">
+   <p>
+     <label for="nama">Masukkan Nama Anda : </label>
+     <input type="text" name="nama" id="nama">
+   </p>
+   <p>
+     <label for="password">Masukkan Password Anda : </label>
+     <input type="password" name="password" id="password">
+   </p>
+   <p>
+     <input type="reset" value="Reset">
+     <input type="submit" value="Kirim">
+   </p>
+</form>
+<h1>Latihan Menggunakan HTML Element Tag FIELDSET dan LEGEND</h1>
+<form action="#" method="post">
+<fieldset>
+   <p>
+     <label for="nama">Nama Anda : </label>
+     <input type="text" name="nama" id="nama" required>
+   </p>
+   <p>
+     <label for="tanggal_lahir">Tanggal Lahir : </label>
+     <input type="date" name="tanggal_lahir" id="tanggal_lahir">
+   </p>
+</fieldset>
+<fieldset>
+   <p>
+     <label for="alamat_kantor">Alamat Kantor : </label>
+     <input type="text" name="alamat_kantor" id="alamat_kantor">
+     </p>
+   <p>
+     <label for="alamat_rumah">Alamat Rumah : </label>
+     <input type="text" name="alamat_rumah" id="alamat_rumah">
+   </p>
+   <p>
+     <label for="telp">Telpon : </label>
+     <input type="number" name="telp" id="telp" pattern="[0-9]" required>
+   </p>
+</fieldset>
+<fieldset>
+   <input type="reset" value="Reset">
+   <input type="submit" value="Kirim">
+   <input type="button" value="Batal">
+</fieldset>
+</form>
+<h1>Latihan Menggunakan HTML Element Tag IMG</h1>
+<img src="ngoding.png" alt="gambar ayam">
+<h1>Latihan Menggunakan HTML Element Tag AUDIO</h1>
+   <audio controls>
+     <source src="Crickets_Chirping.wav" type="audio/wav">
+     <source src="Crickets_Chirping.ogg" type="audio/ogg">
+     <source src="Crickets_Chirping.mp3" type="audio/mpeg">
+     <!--Tulisan dibawah ini akan muncul jika tak ada file yang didukung browser -->
+     <p>Native audio playback is not supported.</p>
+   </audio>
+</body>
+</html>
